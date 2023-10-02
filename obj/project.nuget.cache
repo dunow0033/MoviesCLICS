@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2+OaSUbn6hMxij4XTPoktFInL8fFWY/CmARa9NN0J+6WvtJQYqHH4KWoGlHPwXpYH6KFGXTvRzWtKTXgdSvzBw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bedon\\source\\repos\\MoviesCLI\\MoviesCLI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bedon\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,17 @@
+C:\Users\bedon\source\repos\MoviesCLI\bin\Debug\net6.0\MoviesCLI.exe
+C:\Users\bedon\source\repos\MoviesCLI\bin\Debug\net6.0\MoviesCLI.deps.json
+C:\Users\bedon\source\repos\MoviesCLI\bin\Debug\net6.0\MoviesCLI.runtimeconfig.json
+C:\Users\bedon\source\repos\MoviesCLI\bin\Debug\net6.0\MoviesCLI.dll
+C:\Users\bedon\source\repos\MoviesCLI\bin\Debug\net6.0\MoviesCLI.pdb
+C:\Users\bedon\source\repos\MoviesCLI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.csproj.AssemblyReference.cache
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.AssemblyInfoInputs.cache
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.AssemblyInfo.cs
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.csproj.CoreCompileInputs.cache
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.csproj.CopyComplete
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.dll
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\refint\MoviesCLI.dll
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.pdb
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\MoviesCLI.genruntimeconfig.cache
+C:\Users\bedon\source\repos\MoviesCLI\obj\Debug\net6.0\ref\MoviesCLI.dll
