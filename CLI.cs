@@ -68,10 +68,10 @@ namespace MoviesCLI
 			//Movies movie1 = new Movies(Movies.last().title, Movies.last().director, Movies.last().dateReleased, Movies.last().rating, Movies.last().writer, Movies.last().actors, Movies.last().plot, Movies.last().awards);
 
 			Console.WriteLine();
-			Console.WriteLine($"Movie: {Movies.last().title}");
-			Console.WriteLine($"Director: {Movies.last().director}");
-			Console.WriteLine($"Date Released: {Movies.last().dateReleased}");
-			Console.WriteLine($"Rating: {Movies.last().rating}");
+			Console.WriteLine($"Movie: {Movies.last()}");
+			Console.WriteLine($"Director: {Movies.last()}");
+			Console.WriteLine($"Date Released: {Movies.last()}");
+			Console.WriteLine($"Rating: {Movies.last()}");
 			Console.WriteLine();
 			Console.WriteLine();
 		}
@@ -80,9 +80,9 @@ namespace MoviesCLI
 		{
 			string answer = prompt_for_answer();
 
-			if (answer.Equals('y'))
+			if (answer.Equals("y"))
 				additional_movie_data();
-			else if (answer.Equals('n')) {
+			else if (answer.Equals("n")) {
 				Console.WriteLine();
 				Console.WriteLine();
 				greet_user();
@@ -98,10 +98,10 @@ namespace MoviesCLI
 		{
 
 			Console.WriteLine();
-			Console.WriteLine($"Writer: {Movies.last().writer}");
-			Console.WriteLine($"Actors: {Movies.last().director}");
-			Console.WriteLine($"Plot: {Movies.last().director}");
-			Console.WriteLine($"Awards: {Movies.last().director}");
+			Console.WriteLine($"Writer: {Movies.last()}");
+			Console.WriteLine($"Actors: {Movies.last()}");
+			Console.WriteLine($"Plot: {Movies.last()}");
+			Console.WriteLine($"Awards: {Movies.last()}");
 			Console.WriteLine();
 			Console.WriteLine();
 		}

@@ -25,12 +25,14 @@ namespace MoviesCLI
 		//public static async void movieInfo(string name)
 		//{
 
-		public static async Task<Movies> MovieInfo(string name)
+		//public static async Task<Movies> MovieInfo(string name)
+		public static async void MovieInfo(string name)
 		{
 			url = $"http://www.omdbapi.com/?apikey={API_key}&t={name}";
 
 			using (HttpClient httpClient = new HttpClient())
 			{
+
 				HttpResponseMessage response = await httpClient.GetAsync(url);
 
 				//if (Uri.TryCreate(url, UriKind.Absolute, out uri))
@@ -49,60 +51,76 @@ namespace MoviesCLI
 
 				if (response.IsSuccessStatusCode)
 				{
+
 					string jsonResponse = await response.Content.ReadAsStringAsync();
 
-					//var movies = JsonConvert.DeserializeObject<Movies>(jsonResponse);
-					Dictionary<string, string> movieData = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonResponse);
+					var movieData = JObject.Parse(jsonResponse);
+					//Dictionary<string, string> movieData = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonResponse);
 
-					foreach (var movie1 in movieData)
-					{
-						string key = movie1.Key;
-						string value = movie1.Value.ElementAtOrDefault(0).ToString();
+					//Console.WriteLine(movies);
 
-						if (key == "Title")
-						{
-							title = value;
-						}
-						//title = (string)movieData["Title"];
-						//director = (string)movieData["Director"];
-						//writer = (string)movieData["Writer"];
-						//actors = (string)movieData["Actors"];
-						//plot = (string)movieData["Plot"];
-						//dateReleased = (string)movieData["Released"];
-						//rating = (string)movieData["Rated"];
-						//awards = (string)movieData["Awards"];
-						else if (key == "Director")
-						{
-							director = value;
-						}
-						else if (key == "Writer")
-						{
-							writer = value;
-						}
-						else if (key == "Actors")
-						{
-							actors = value;
-						}
-						else if (key == "Plot")
-						{
-							plot = value;
-						}
-						else if (key == "Released")
-						{
-							dateReleased = value;
-						}
-						else if (key == "Rated")
-						{
-							rating = value;
-						}
-						else if (key == "Awards")
-						{
-							awards = value;
-						}
-					}
+					string title = movieData.ContainsKey("Title") ? (string) movieData["Title"] : string.Empty;
+					string director = movieData.ContainsKey("Director") ? (string) movieData["Director"] : string.Empty;
+					string writer = movieData.ContainsKey("Writer") ? (string) movieData["Writer"] : string.Empty;
+					string actors = movieData.ContainsKey("Actors") ? (string) movieData["Actors"] : string.Empty;
+					string plot = movieData.ContainsKey("Plot") ? (string) movieData["Plot"] : string.Empty;
+					string dateReleased = movieData.ContainsKey("Released") ? (string )movieData["Released"] : string.Empty;
+					string rating = movieData.ContainsKey("Rated") ? (string) movieData["Rated"] : string.Empty;
+					string awards = movieData.ContainsKey("Awards") ? (string) movieData["Awards"] : string.Empty;
 
-					//Movies movie = 
-						new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
+					//foreach (var movie1 in movies)
+					//{
+
+					//	string key = movie1.Key;
+					//	string value = movie1.Value.ElementAtOrDefault(0).ToString();
+
+					//	if (key == "Title")
+					//	{
+					//		title = value;
+					//	}
+					//	//title = (string)movieData["Title"];
+					//	//director = (string)movieData["Director"];
+					//	//writer = (string)movieData["Writer"];
+					//	//actors = (string)movieData["Actors"];
+					//	//plot = (string)movieData["Plot"];
+					//	//dateReleased = (string)movieData["Released"];
+					//	//rating = (string)movieData["Rated"];
+					//	//awards = (string)movieData["Awards"];
+					//	else if (key == "Director")
+					//	{
+					//		director = value;
+					//	}
+					//	else if (key == "Writer")
+					//	{
+					//		writer = value;
+					//	}
+					//	else if (key == "Actors")
+					//	{
+					//		actors = value;
+					//	}
+					//	else if (key == "Plot")
+					//	{
+					//		plot = value;
+					//	}
+					//	else if (key == "Released")
+					//	{
+					//		dateReleased = value;
+					//	}
+					//	else if (key == "Rated")
+					//	{
+					//		rating = value;
+					//	}
+					//	else if (key == "Awards")
+					//	{
+					//		awards = value;
+					//	}
+					//}
+
+					Movies movies = new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
+
+					Console.WriteLine(movies);
+
+					Movies.movies.Add(movies);
 					//return movie;
 				}
 				else
@@ -116,7 +134,7 @@ namespace MoviesCLI
 			//	Console.WriteLine($"HTTP request error: {e.Message}");
 			//}
 
-			return null;
+			//return null;
 		}
 
 		public static async Task<bool?> checkForInvalidMovie(string name) {
