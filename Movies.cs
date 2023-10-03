@@ -39,7 +39,7 @@ namespace MoviesCLI
 			this.awards = awards;
 
 			// Add the current movie instance to the collection
-			//movies.Add(this);
+			movies.Add(this);
 		}
 
 		public static List<Movies> allMovies() {

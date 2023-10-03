@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace MoviesCLI
 {
@@ -37,7 +38,7 @@ namespace MoviesCLI
 					movie = prompt_for_answer();
 				}
 
-				API.MovieInfo(movie);
+				API.MovieInfo(movie).Wait();
 
 				display_movie_data();
 
@@ -91,13 +92,13 @@ namespace MoviesCLI
 
 			//Movies movie1 = new Movies(Movies.last().title, Movies.last().director, Movies.last().dateReleased, Movies.last().rating, Movies.last().writer, Movies.last().actors, Movies.last().plot, Movies.last().awards);
 
-			//Console.WriteLine();
-			//Console.WriteLine($"Movie: {Movies.last().title}");
-			//Console.WriteLine($"Director: {Movies.last().director}");
-			//Console.WriteLine($"Date Released: {Movies.last().dateReleased}");
-			//Console.WriteLine($"Rating: {Movies.last().rating}");
-			//Console.WriteLine();
-			//Console.WriteLine();
+			Console.WriteLine();
+			Console.WriteLine($"Movie: {Movies.last().title}");
+			Console.WriteLine($"Director: {Movies.last().director}");
+			Console.WriteLine($"Date Released: {Movies.last().dateReleased}");
+			Console.WriteLine($"Rating: {Movies.last().rating}");
+			Console.WriteLine();
+			Console.WriteLine();
 
 		}
 
@@ -105,9 +106,9 @@ namespace MoviesCLI
 		{
 			Console.WriteLine();
 			Console.WriteLine($"Writer: {Movies.last().writer}");
-			Console.WriteLine($"Actors: {Movies.last()}");
-			Console.WriteLine($"Plot: {Movies.last()}");
-			Console.WriteLine($"Awards: {Movies.last()}");
+			Console.WriteLine($"Actors: {Movies.last().actors}");
+			Console.WriteLine($"Plot: {Movies.last().plot}");
+			Console.WriteLine($"Awards: {Movies.last().awards}");
 			Console.WriteLine();
 			Console.WriteLine();
 		}
