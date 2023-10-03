@@ -22,9 +22,6 @@ namespace MoviesCLI
 
 		private static string title, director, writer, actors, plot, dateReleased, rating, awards;
 
-		//public static async void movieInfo(string name)
-		//{
-
 		//public static async Task<Movies> MovieInfo(string name)
 		public static async void MovieInfo(string name)
 		{
@@ -118,21 +115,20 @@ namespace MoviesCLI
 
 					Movies movies = new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
 
-					Console.WriteLine(movies);
-
 					Movies.movies.Add(movies);
-					//return movie;
 				}
 				else
 				{
 					Console.WriteLine($"HTTP request failed with status code: {response.StatusCode}");
 				}
-			} 
+			}
 			//}
 			//catch (HttpRequestException e)
 			//{
 			//	Console.WriteLine($"HTTP request error: {e.Message}");
 			//}
+
+			Movies.getMovies();
 
 			//return null;
 		}

@@ -46,6 +46,11 @@ namespace MoviesCLI
 			return movies;
 		}
 
+		public static void getMovies()
+		{
+			Console.WriteLine(movies[0].title);
+		}
+
 		public static Movies last() {
 			//Movies movies1 = new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
 			return movies.LastOrDefault();
