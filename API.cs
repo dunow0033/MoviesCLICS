@@ -113,9 +113,9 @@ namespace MoviesCLI
 					//	}
 					//}
 
-					new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
+					Movies movies = new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
 
-					//Movies.movies.Add(movies);
+					Movies.movies.Add(movies);
 				}
 				else
 				{
