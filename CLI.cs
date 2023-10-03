@@ -39,13 +39,13 @@ namespace MoviesCLI
 
 				API.MovieInfo(movie);
 
-				API.display_movie_data();
+				display_movie_data();
 
 				Console.WriteLine("Would you like to see additonal info for that movie or see trivia for another movie? ('y' or 'n'):  ");
 
-				//additional_movie_answer();
+				additional_movie_answer();
 
-				//movie = next_movie();
+				movie = next_movie();
 			}
 		}
 
@@ -63,23 +63,25 @@ namespace MoviesCLI
 			return prompt_for_answer();
 		}
 
-		//public void additional_movie_answer()
-		//{
-		//	string answer = prompt_for_answer();
+		public void additional_movie_answer()
+		{
+			string answer = prompt_for_answer();
 
-		//	if (answer.Equals("y"))
-		//		Movies.additional_movie_data();
-		//	else if (answer.Equals("n")) {
-		//		Console.WriteLine();
-		//		Console.WriteLine();
-		//		greet_user();
-		//	}
-		//	else {
-		//		Console.WriteLine("Sorry, I didn't understand that response!!  Let's go back to the beginning!!");
-		//		Console.WriteLine();
-		//		greet_user();
-		//	}
-		//}
+			if (answer.Equals("y"))
+				additional_movie_data();
+			else if (answer.Equals("n"))
+			{
+				Console.WriteLine();
+				Console.WriteLine();
+				greet_user();
+			}
+			else
+			{
+				Console.WriteLine("Sorry, I didn't understand that response!!  Let's go back to the beginning!!");
+				Console.WriteLine();
+				greet_user();
+			}
+		}
 
 		public static void display_movie_data()
 		{
@@ -89,13 +91,13 @@ namespace MoviesCLI
 
 			//Movies movie1 = new Movies(Movies.last().title, Movies.last().director, Movies.last().dateReleased, Movies.last().rating, Movies.last().writer, Movies.last().actors, Movies.last().plot, Movies.last().awards);
 
-			Console.WriteLine();
-			Console.WriteLine($"Movie: {Movies.last().title}");
-			Console.WriteLine($"Director: {Movies.movies[0].director}");
-			Console.WriteLine($"Date Released: {Movies.movies[0].dateReleased}");
-			Console.WriteLine($"Rating: {Movies.movies[0].rating}");
-			Console.WriteLine();
-			Console.WriteLine();
+			//Console.WriteLine();
+			//Console.WriteLine($"Movie: {Movies.last().title}");
+			//Console.WriteLine($"Director: {Movies.last().director}");
+			//Console.WriteLine($"Date Released: {Movies.last().dateReleased}");
+			//Console.WriteLine($"Rating: {Movies.last().rating}");
+			//Console.WriteLine();
+			//Console.WriteLine();
 
 		}
 

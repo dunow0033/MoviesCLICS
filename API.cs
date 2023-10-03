@@ -27,8 +27,8 @@ namespace MoviesCLI
 		{
 			url = $"http://www.omdbapi.com/?apikey={API_key}&t={name}";
 
-			using (HttpClient httpClient = new HttpClient())
-			{
+			HttpClient httpClient = new HttpClient();
+			
 
 				HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -113,22 +113,30 @@ namespace MoviesCLI
 					//	}
 					//}
 
-					Movies movies = new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
+					new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
 
-					Movies.movies.Add(movies);
+					//Movies.movies.Add(movies);
 				}
 				else
 				{
 					Console.WriteLine($"HTTP request failed with status code: {response.StatusCode}");
 				}
-			}
+
+
+			Console.WriteLine();
+			Console.WriteLine($"Movie: {Movies.last().title}");
+			Console.WriteLine($"Director: {Movies.last().director}");
+			Console.WriteLine($"Date Released: {Movies.last().dateReleased}");
+			Console.WriteLine($"Rating: {Movies.last().rating}");
+			Console.WriteLine();
+			Console.WriteLine();
 			//}
 			//catch (HttpRequestException e)
 			//{
 			//	Console.WriteLine($"HTTP request error: {e.Message}");
 			//}
 
-			Movies.getMovies();
+			//Movies.getMovies();
 
 			//return null;
 		}

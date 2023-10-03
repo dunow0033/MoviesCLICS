@@ -39,20 +39,21 @@ namespace MoviesCLI
 			this.awards = awards;
 
 			// Add the current movie instance to the collection
-			//movies.Add(this);
+			movies.Add(this);
 		}
 
 		public static List<Movies> allMovies() {
 			return movies;
 		}
 
-		public static void getMovies()
-		{
-			Console.WriteLine(movies[0].title);
-		}
+		//public static void getMovies()
+		//{
+		//	Console.WriteLine(movies[0].title);
+		//}
 
 		public static Movies last() {
 			//Movies movies1 = new Movies(title, director, writer, actors, plot, dateReleased, rating, awards);
+
 			return movies.LastOrDefault();
 		}
 	}
